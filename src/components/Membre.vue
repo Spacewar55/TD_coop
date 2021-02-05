@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="column">
-            <h4>{{membre.fullname}}</h4>
+            <h2>{{membre.fullname}}</h2>
             <a :href="'mailto:'+membre.email">{{membre.email}}</a>
         </div>
         <div class="column">
@@ -26,10 +26,6 @@
                 {
                     api.delete('members/'+this.membre.id).then(response => {
                         this.$bus.$emit('charger-membres');
-                        if(response.data.message)
-                        {
-                            alert(response.data.message);
-                        }
                     }).catch(error => {
                         console.log(error.response.data);
                     });

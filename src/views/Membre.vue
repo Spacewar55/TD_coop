@@ -23,12 +23,17 @@ export default {
             let cpt=0;
             this.$store.state.conversations.forEach(conversation =>{
                 api.get('channels/'+conversation.id+'/posts').then(response => {
-                    response.data.forEach(this.message => {
+                    response.data.forEach(message => {
                         if(message.member_id == this.membre.id){
-
+                            message.conversation = conversation;
+                            this.messages.push(message);
                         }
                     })
-                    tousLesMessages = tousLesMessages.concat(response.data);
+                    cpt++;
+                    if(this.$store.state.conversations.length == cpt)
+                    {
+                        this.loading=false;
+                    }
                 });
             })
         }

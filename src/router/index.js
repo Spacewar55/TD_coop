@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/creer-compte',
-    component: () => import('../views/CreerCompteVue.vue')
+    component: () => import('../views/CreerCompte.vue')
   },
   {
     path: '/membres',

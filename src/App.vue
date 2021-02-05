@@ -17,6 +17,13 @@ export default {
       apiOK:false,
     }
   },
+  methods : {
+    chargerMembres() {
+      api.get('members').then(response =>{
+        this.$store.commit('setMembres',response.data);
+      });
+    }
+  },
   mounted(){
     console.log("L'app est démarée")
 
@@ -24,17 +31,17 @@ export default {
       this.apiOK=true;
       console.log("L'api est fonctionnelle");
 
-      api.get('members').then(response =>{
-        this.$store.commit('setMembres',response.data);
-      });
-
       if(!this.$store.state.membre){
         if(this.$route.path != "/se-connecter" && this.$route.path != "/creer-compte"){
-          this.$routeur.push('/se-connecter');
+          this.$router.push('/se-connecter');
         }
+      } else {
+        this.$bus.$on('charger-membres', this.chargerMembres);
+        this.chargerMembres();
       }
     }).catch(error => {
-      console.log("L'api ne fonctionne pas");
+
+      console.log("L'api ne fonctionne pas", error);
 
     }).finally(() => {
       this.chargementOK = true;
