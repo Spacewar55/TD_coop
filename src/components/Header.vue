@@ -32,9 +32,9 @@ export default {
     margin-left: 10px;
     margin-right: 50px;
 }
-.navbar > ul:last-child{
-    margin-left: 830px;
-}
+/*.navbar > ul:last-child{
+    text-align: right;
+}*/
 a{
     color: white;
 }
