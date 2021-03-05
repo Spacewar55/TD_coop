@@ -14,7 +14,7 @@ export default new Vuex.Store({
     membre : false,
     token : false,
     membres : false,
-    conversation : false
+    conversations : false
   },
   mutations: {
     setMembre(state, membre) {
@@ -26,9 +26,9 @@ export default new Vuex.Store({
     setToken(state, token) {
       state.token = token
     },
-    /*setConversation(state, conversations) {
+    setConversations(state, conversations) {
       state.conversations = conversations
-    },*/
+    },
     seDeconnecter(state){
       state.membre = false;
       state.token = false;

@@ -4,11 +4,11 @@
       <h1>Liste des conversations</h1>
       <CreerConversation/>
 
-      <div class="conversations">
+      <!-- <div class="conversations">
         <template v-for="conversation in $store.state.conversations">
           <Conversation :conversation="conversation"/>
         </template>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

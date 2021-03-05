@@ -8,12 +8,12 @@
                 <form @submit.prevent="creerConversation">
                     <fieldset>
                         <p>
-                            <label>Sujet : </label>
-                            <input v-model="label" required type="text" placeholder="Quel est le sujet?">
-                        </p>
-                        <p>
                             <label>Tags : </label>
                             <input v-model="label" required type="text" placeholder="Quels sont les concepts?">
+                        </p>
+                        <p>
+                            <label>Sujet : </label>
+                            <input v-model="sujet" required type="text" placeholder="Quel est le sujet?">
                         </p>
                         <p><button>Créer la conversation</button></p>
                         <p><button type="button" @click="masquerFormulaire" class="button is-warning button-clear">Annuler</button></p>
@@ -42,6 +42,17 @@ export default {
         },
         masquerFormulaire() {
             this.afficher = false;
+        },
+        creerConversation(){
+            api.post('channels',{
+                label: this.label,
+                topic: this.sujet
+            }).then(response => {
+                alert("Conversation a été créée!");
+                this.$bus.$emit("charger-conversation");
+            }).catch(error => {
+                alert(error.response.data.message);
+            })
         }
     }
 }

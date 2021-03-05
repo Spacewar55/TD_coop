@@ -22,6 +22,11 @@ export default {
       api.get('members').then(response =>{
         this.$store.commit('setMembres',response.data);
       });
+    },
+    chargerConversation() {
+      api.get('channels').then(response =>{
+        this.$store.commit('setConversations',response.data);
+      });
     }
   },
   mounted(){
@@ -38,6 +43,9 @@ export default {
       } else {
         this.$bus.$on('charger-membres', this.chargerMembres);
         this.chargerMembres();
+        
+        this.$bus.$on('charger-conversation', this.chargerConversation);
+        this.chargerConversation();
       }
     }).catch(error => {
 

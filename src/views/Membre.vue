@@ -3,15 +3,38 @@
         <h1>{{membre.fullname}}</h1>
         <p>Email : {{membre.email}}</p>
         <p>Inscrit depuis : {{membre.created_at}}</p>
+        <h2>Messages</h2>
+        <div v-it="loading">
+            Chargement des messages ...
+        </div>
+        <template v-else v-for="message in messagesTries">
+            <Message :message="message"></Message>
+        </template>
     </div>
 </template>
 <script>
+import Message from '../components/Message.vue'
 export default {
     data(){
-        return{
+        ret
+        Messageurn{
             membre : false,
             messages : [],
             loading : true
+        }
+    },
+    computed : {
+        messagesTries() {
+            function compare( a, b ) {
+                if (a.created_at < b.created_at){
+                    return -1;
+                }
+                if (a.created_at > b.created_at){
+                    return 1;
+                }
+                return 0;
+            }
+            return this.message.sort(compare);
         }
     },
     mounted() {

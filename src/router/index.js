@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('../views/Conversations.vue')
   },
   {
     path: '/se-connecter',
@@ -27,11 +27,11 @@ const routes = [
     name: 'Membre',
     component: () => import('../views/Membres.vue')
   },
-  /*{
-    path: '/conversation/:id',
+  {
+    path: '/conversation',
     name: 'Conversation',
-    component: () => import('../views/Conversation.vue')
-  }*/
+    component: () => import('../views/Conversations.vue')
+  }
 ]
 
 const router = new VueRouter({
