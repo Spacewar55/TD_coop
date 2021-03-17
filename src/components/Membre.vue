@@ -5,9 +5,9 @@
             <a :href="'mailto:'+membre.email">{{membre.email}}</a>
         </div>
         <div class="column">
-            <router-link :to="{name:'Membre',params : {membre_id:membre.id}}" class="button is-info" title="Profil">Voir Profil</router-link> 
+            <router-link :to="{name:'Membre',params : {membre_id:membre.id}}" class="button is-info" title="Profil">👁️</router-link> 
             &nbsp;
-            <button :disabled="membreConnecte" class="button is-danger button-outline" @click="effacerMembre" title="Effacer">X</button>
+            <button :disabled="membreConnecte" class="button is-danger button-outline" @click="effacerMembre" title="Effacer">❌</button>
         </div>
     </div>
 </template>

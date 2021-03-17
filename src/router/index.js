@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/membre/:membre_id',
     name: 'Membre',
-    component: () => import('../views/Membres.vue')
+    component: () => import('../views/Membre.vue')
   },
   // {
   //   path: '/conversation',

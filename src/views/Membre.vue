@@ -4,7 +4,7 @@
         <p>Email : {{membre.email}}</p>
         <p>Inscrit depuis : {{membre.created_at}}</p>
         <h2>Messages</h2>
-        <div v-it="loading">
+        <div v-if="loading">
             Chargement des messages ...
         </div>
         <template v-else v-for="message in messagesTries">
@@ -39,6 +39,7 @@ export default {
     mounted() {
         if(this.$route.params.membre_id){
             this.membre = this.$store.getters.getMembre(this.$route.params.membre_id);
+            let d = new Date(this.membre.created_at);
             let options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             this.membre.depuis = d.toLocaleDateString('fr-FR', options);
 
@@ -46,7 +47,7 @@ export default {
             this.$store.state.conversations.forEach(conversation =>{
                 api.get('channels/'+conversation.id+'/posts').then(response => {
                     response.data.forEach(message => {
-                        if(message.member_id == this.membre.id){
+                        if(message.member_id == this.$route.params.membre_id){
                             message.conversation = conversation;
                             this.messages.push(message);
                         }

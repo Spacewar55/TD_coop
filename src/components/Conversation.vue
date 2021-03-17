@@ -4,7 +4,7 @@
             <h2>{{conversation.label}}</h2>
         </div>
         <div class="column">
-            <router-link :to="{name:'Discussion',params : {conversation_id:conversation_id}}" class="button is-info" title="Conversation">Voir la conversation</router-link>
+            <router-link :to="{name:'Discussion',params : {conversation_id:conversation_id}}" class="button is-info" title="Conversation">👁️</router-link>
             &nbsp;
         </div>
     </div>
