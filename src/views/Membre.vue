@@ -16,8 +16,7 @@
 import Message from '../components/Message.vue'
 export default {
     data(){
-        ret
-        Messageurn{
+        return{
             membre : false,
             messages : [],
             loading : true

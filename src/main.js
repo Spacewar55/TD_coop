@@ -8,8 +8,8 @@ import axios from 'axios'
 import 'bulma/css/bulma.css'
 
 window.api = axios.create({
-    baseURL: 'https://tools.sopress.net/iut/coop/api/',
-    headers: { Authorization: '9fed0c214b4f61121158a3f8d6955f9874d1d611' }
+    baseURL: 'https://allweb.fun/coop/api/',
+    headers: { Authorization: '92090f29b970e387c6fedc36c849a86bfcc47e0b' }
   });
 
 Vue.prototype.$bus = new Vue()

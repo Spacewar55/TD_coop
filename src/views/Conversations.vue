@@ -12,6 +12,12 @@
 <script>
 import CreerConversation from '../components/CreerConversation.vue';
 export default {
+    data() {
+        return{
+            conversation: true,
+
+        }
+    },
     components:{
         CreerConversation
     }
