@@ -21,7 +21,7 @@
                 </form>
             </section>
         </div>
-        <button @click="afficherFormulaire">Créeer une nouvelle conversation</button>
+        <button @click="afficherFormulaire">Créer une nouvelle conversation</button>
     </div>
 </template>
 <script>
