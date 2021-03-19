@@ -27,11 +27,11 @@ const routes = [
     name: 'Membre',
     component: () => import('../views/Membre.vue')
   },
-  // {
-  //   path: '/conversation',
-  //   name: 'Conversation',
-  //   component: () => import('../views/Conversations.vue')
-  // }
+  {
+    path: '/conversation/:conversation_id',
+    name: 'Discussion',
+    component: () => import('../views/Conversation.vue')
+  }
 ]
 
 const router = new VueRouter({

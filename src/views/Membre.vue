@@ -8,7 +8,7 @@
             Chargement des messages ...
         </div>
         <template v-else v-for="message in messagesTries">
-            <Message :message="message"></Message>
+            <Message :message="message"/>
         </template>
     </div>
 </template>
@@ -17,7 +17,7 @@ import Message from '../components/Message.vue'
 export default {
     data(){
         return{
-            membre : false,
+            membre : null,
             messages : [],
             loading : true
         }
@@ -33,10 +33,11 @@ export default {
                 }
                 return 0;
             }
-            return this.message.sort(compare);
+            return this.messages.sort(compare);
         }
     },
     mounted() {
+        
         if(this.$route.params.membre_id){
             this.membre = this.$store.getters.getMembre(this.$route.params.membre_id);
             let d = new Date(this.membre.created_at);
@@ -60,6 +61,6 @@ export default {
                 });
             })
         }
-    }
+    },
 }
 </script>

@@ -2,13 +2,13 @@
     <div>
         <div id="creer-conversation" v-if="afficher">
             <section>
-                <button class="close" @click="masquerFormulaire">X</button>
+                <button class="close" @click="masquerFormulaire">❌</button>
                 <h3>Créer une conversation</h3>
 
                 <form @submit.prevent="creerConversation">
                     <fieldset>
                         <p>
-                            <label>Tags : </label>
+                            <label>Titre : </label>
                             <input v-model="label" required type="text" placeholder="Quels sont les concepts?">
                         </p>
                         <p>

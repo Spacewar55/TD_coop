@@ -7,7 +7,7 @@
                 <li><router-link to="/">Conversation(s)</router-link></li>
             </ul>
             <ul>
-                <li><button class="button is-danger is-light" @click="seDeconnecter">Déconnection</button></li>
+                <li><button class="button is-danger is-light" @click="seDeconnecter">Déconnexion</button></li>
             </ul>
         </div>
     </header>

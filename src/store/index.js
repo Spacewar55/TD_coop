@@ -37,7 +37,7 @@ export default new Vuex.Store({
   getters: {
     getMembre(state){
       let fonction = (membre_id) => {
-        return state.find(membre => {
+        return state.membres.find(membre => {
           return membre.id == membre_id;
         })
       }
